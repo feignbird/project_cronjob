@@ -58,3 +58,17 @@ python manage.py runserver 0.0.0.0:8081 `<- [input_port_that_is_not_in_use] `<br
 
 ` Now you can hit 'http://0.0.0.0:9000/' endpoint to get the user created by crontab every 2 minutes `
 
+
+### How to work with cronjob
+
+1. pip install django-crontab
+2. put in installed_apps -> django_crontab
+3. add cron.py in any app you want & in that file you have to define functions that should be running on cronjobs.
+4. add settings of cronjobs or Configuration of cronjobs in settings.py
+` CRONJOBS = [ `
+    `('* * * * *', 'location_to_the_function_you_want_to_run.cron.function_name', ``[list_of_positional_arguments_to_the_method], {'dictionary_of_keywork_argument':'_for_the_method'},"job_specifix_suffix") `
+`]`
+5. ran the command 'python manage.py crontab add' 
+
+for more information : https://pypi.org/project/django-crontab/
+
