@@ -3,3 +3,4 @@ django-crontab==0.7.1
 djangorestframework==3.13.1
 requests==2.27.1
 bs4==0.0.1
+drf-yasg==1.20.0

@@ -56,17 +56,24 @@ python manage.py runserver 0.0.0.0:8081 `<- [input_port_that_is_not_in_use] `<br
 9. python manage.py runserver 0.0.0.0:9000 <br>
 ` Above will run your django project `
 
-` Now you can hit 'http://0.0.0.0:9000/' endpoint to get the users created by crontab every 2 minutes `
+` Now you can hit 'http://0.0.0.0:9000/users/' endpoint to get the users created by crontab every 2 minutes `
 
 
 
 ## API Endpoints
-### There are total of 7 endpoints <br>
+### There are total of 2 endpoints <br>
 
-1. GET http://localhost:9000/ <- Gives data of created users
-2. Goto URL: http://localhost:9000/admin/ <- Log into admin panel to see created users
+1. GET http://localhost:9000/users/ <- Gives data of created users
 
+2. GET http://localhost:9000/swagger.json <- get swagger.json data
 
+3. Goto URL: http://localhost:9000/admin/ <- Log into admin panel to see created users <br>
+
+4. Goto URL: http://localhost:9000/swagger/ <- Opens up swagger for the project
+
+5. Goto URL: http://localhost:9000/redoc/ <- Opens up redoc generator for project <br>
+
+` You can also see their 'data_joined' attribute, Difference b/w every user creation is 2 minutes `
 
 ### How to work with cronjob
 
@@ -77,7 +84,8 @@ python manage.py runserver 0.0.0.0:8081 `<- [input_port_that_is_not_in_use] `<br
 ` CRONJOBS = [ `
     `('* * * * *', 'location_to_the_function_you_want_to_run.cron.function_name', ``[list_of_positional_arguments_to_the_method], {'dictionary_of_keywork_argument':'_for_the_method'},"job_specifix_suffix") `
 `]`
-5. ran the command 'python manage.py crontab add' 
-
+5. ran the command 'python manage.py crontab add'
+6. if want to remove the cronjob just run 'python manage.py crontab remove', It'll remove every active cronjob from the crontab
+7. if you want to see what cronjobs are activated, just run 'python manage.py crontab show'
 for more information : https://pypi.org/project/django-crontab/
 
