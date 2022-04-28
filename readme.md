@@ -56,7 +56,16 @@ python manage.py runserver 0.0.0.0:8081 `<- [input_port_that_is_not_in_use] `<br
 9. python manage.py runserver 0.0.0.0:9000 <br>
 ` Above will run your django project `
 
-` Now you can hit 'http://0.0.0.0:9000/' endpoint to get the user created by crontab every 2 minutes `
+` Now you can hit 'http://0.0.0.0:9000/' endpoint to get the users created by crontab every 2 minutes `
+
+
+
+## API Endpoints
+### There are total of 7 endpoints <br>
+
+1. GET http://localhost:9000/ <- Gives data of created users
+2. Goto URL: http://localhost:9000/admin/ <- Log into admin panel to see created users
+
 
 
 ### How to work with cronjob
